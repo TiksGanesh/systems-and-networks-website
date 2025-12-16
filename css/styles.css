@@ -645,7 +645,7 @@ section {
 
 .contact-info li {
     font-size: var(--font-size-sm);
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--text-dark);
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
@@ -653,21 +653,38 @@ section {
 
 .contact-label {
     font-weight: var(--font-weight-semibold);
-    color: var(--white);
+    color: var(--text-dark);
     font-size: var(--font-size-xs);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .contact-info a {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--primary-color);
     text-decoration: none;
     transition: var(--transition-fast);
 }
 
 .contact-info a:hover {
-    color: var(--white);
+    color: var(--primary-dark);
     text-decoration: underline;
+}
+
+/* Footer overrides for contact info */
+.main-footer .contact-info li {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.main-footer .contact-label {
+    color: var(--white);
+}
+
+.main-footer .contact-info a {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.main-footer .contact-info a:hover {
+    color: var(--white);
 }
 
 /* Social Links */
