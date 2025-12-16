@@ -1,8 +1,4 @@
-# ⚠️ Moved to Documentation Directory
-
-This file has been moved to [`docs/PROJECT_STRUCTURE.md`](docs/PROJECT_STRUCTURE.md)
-
-Please refer to the new location for the complete project structure documentation.
+# Project Folder Structure
 
 ```
 systems-and-networks-website/
@@ -31,6 +27,12 @@ systems-and-networks-website/
 │
 ├── fonts/                         # Custom fonts (if needed)
 │   └── (font files)
+│
+├── docs/                          # Documentation files
+│   ├── DESIGN_SYSTEM.md          # Design system reference
+│   ├── PROJECT_STRUCTURE.md      # This file - project structure
+│   ├── HEADER_FOOTER_GUIDE.md    # Header/footer implementation guide
+│   └── HEADER_FOOTER_SUMMARY.md  # Header/footer quick summary
 │
 ├── .htaccess                      # Apache configuration
 ├── index.html                     # Homepage
@@ -61,6 +63,12 @@ systems-and-networks-website/
 
 ### `/fonts/`
 - Custom web fonts (if not using Google Fonts or system fonts)
+
+### `/docs/`
+- Documentation files for development reference
+- Design system specifications
+- Implementation guides for components
+- Architecture and structure information
 
 ### Root Files
 - **index.html**: Homepage (required)
