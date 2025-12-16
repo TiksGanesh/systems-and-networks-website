@@ -115,7 +115,7 @@ function initStickyHeader() {
         
         if (currentScroll > lastScroll && currentScroll > 100) {
             // Scrolling down
-            header.classList.add('sticky');
+            header.classList.remove('sticky');
         } else {
             // Scrolling up
             header.classList.add('sticky');
