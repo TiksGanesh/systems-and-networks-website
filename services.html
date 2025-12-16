@@ -46,7 +46,105 @@
 
 <!-- MAIN CONTENT -->
 <main>
-    <!-- Page content goes here -->
+    <!-- Page Header -->
+    <section>
+        <div class="container">
+            <h1 class="section-title">Our Services</h1>
+            <p class="section-subtitle">Clear, dependable IT services designed to plan, build, and support modern business infrastructure.</p>
+        </div>
+    </section>
+
+    <!-- Services List -->
+    <section>
+        <div class="container">
+            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--spacing-2xl);">
+                <!-- IT Infrastructure Solutions -->
+                <article class="card" aria-labelledby="svc-infra-title">
+                    <h2 id="svc-infra-title" class="card-title">IT Infrastructure Solutions</h2>
+                    <p class="card-text">Design and deployment of secure, resilient on‑prem or hybrid environments sized to actual workload and growth needs.</p>
+                    <ul class="card-text" style="list-style: disc; padding-left: 1.25rem;">
+                        <li>Server, storage, and virtualization platforms</li>
+                        <li>Backup, recovery, and continuity planning</li>
+                        <li>Access control and baseline hardening</li>
+                        <li>Monitoring and capacity management</li>
+                    </ul>
+                </article>
+
+                <!-- Computers, Laptops & Servers -->
+                <article class="card" aria-labelledby="svc-endpoints-title">
+                    <h2 id="svc-endpoints-title" class="card-title">Computers, Laptops &amp; Servers</h2>
+                    <p class="card-text">Procurement and lifecycle management for endpoints and servers, ready for rapid onboarding.</p>
+                    <ul class="card-text" style="list-style: disc; padding-left: 1.25rem;">
+                        <li>Specification, sourcing, and warranty support</li>
+                        <li>OS imaging, configuration, and updates</li>
+                        <li>Asset tracking and refresh planning</li>
+                        <li>Peripherals and accessories management</li>
+                    </ul>
+                </article>
+
+                <!-- Network Design & Setup -->
+                <article class="card" aria-labelledby="svc-network-title">
+                    <h2 id="svc-network-title" class="card-title">Network Design &amp; Setup</h2>
+                    <p class="card-text">Reliable, secure connectivity across offices and remote locations with clear documentation and handover.</p>
+                    <ul class="card-text" style="list-style: disc; padding-left: 1.25rem;">
+                        <li>LAN/WAN topology, routing, and switching</li>
+                        <li>Business Wi‑Fi planning and site surveys</li>
+                        <li>Firewalling, VPN, and remote access</li>
+                        <li>Segmentation, policy, and monitoring</li>
+                    </ul>
+                </article>
+
+                <!-- IT Equipment Rental -->
+                <article class="card" aria-labelledby="svc-rental-title">
+                    <h2 id="svc-rental-title" class="card-title">IT Equipment Rental</h2>
+                    <p class="card-text">Short‑term and project‑based rentals to handle events, training, or temporary scaling needs.</p>
+                    <ul class="card-text" style="list-style: disc; padding-left: 1.25rem;">
+                        <li>Laptops, desktops, servers, and monitors</li>
+                        <li>Switches, access points, and cabling</li>
+                        <li>Pre‑configuration, delivery, and pickup</li>
+                        <li>On‑site setup and basic support</li>
+                    </ul>
+                </article>
+
+                <!-- Domain & Web Hosting -->
+                <article class="card" aria-labelledby="svc-hosting-title">
+                    <h2 id="svc-hosting-title" class="card-title">Domain &amp; Web Hosting</h2>
+                    <p class="card-text">Reseller services for domains and hosting with managed DNS and SSL for secure, reliable availability.</p>
+                    <ul class="card-text" style="list-style: disc; padding-left: 1.25rem;">
+                        <li>Domain registration and transfers</li>
+                        <li>DNS configuration and records management</li>
+                        <li>Shared/VPS hosting and backups</li>
+                        <li>SSL certificates and renewals</li>
+                    </ul>
+                </article>
+
+                <!-- Professional Email Setup -->
+                <article class="card" aria-labelledby="svc-email-title">
+                    <h2 id="svc-email-title" class="card-title">Professional Email Setup</h2>
+                    <p class="card-text">Business email setup with policy, security, and migration support—aligned to your preferred provider.</p>
+                    <ul class="card-text" style="list-style: disc; padding-left: 1.25rem;">
+                        <li>Mailbox provisioning and migrations</li>
+                        <li>Security, SPF/DKIM/DMARC configuration</li>
+                        <li>Retention, archiving, and access policies</li>
+                        <li>Device setup and user handover</li>
+                    </ul>
+                </article>
+
+                <!-- IT Consultation Services -->
+                <article class="card" aria-labelledby="svc-consult-title">
+                    <h2 id="svc-consult-title" class="card-title">IT Consultation Services</h2>
+                    <p class="card-text">Independent advice grounded in operational experience, focused on reliability, security, and total cost.</p>
+                    <ul class="card-text" style="list-style: disc; padding-left: 1.25rem;">
+                        <li>Assessments and remediation roadmaps</li>
+                        <li>Architecture reviews and right‑sizing</li>
+                        <li>Cost optimization and vendor selection</li>
+                        <li>Project planning and delivery oversight</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
 </main>
 
 <!-- FOOTER -->
@@ -118,6 +216,7 @@
 
 <!-- JavaScript -->
 <script src="js/header-footer.js"></script>
+<script src="js/animations.js"></script>
 <script src="js/main.js"></script>
 
 </body>

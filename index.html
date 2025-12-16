@@ -49,7 +49,162 @@
 
 <!-- MAIN CONTENT -->
 <main>
-    <!-- Page content goes here -->
+    <!-- Hero Section -->
+    <section class="hero-section" style="background: var(--bg-lighter);">
+        <div class="container" style="display: grid; align-items: center; gap: var(--spacing-2xl); padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-3xl);">
+            <div class="animate-on-scroll slide-up" style="display: flex; flex-direction: column; gap: var(--spacing-lg);">
+                <h1>Systems &amp; Networks</h1>
+                <p class="text-light" style="font-size: var(--font-size-xl); max-width: 800px;">
+                    Reliable, scalable IT infrastructure and services for growing businesses — from startups to MNCs. We design, deploy, and support technology that keeps your operations secure, available, and performing.
+                </p>
+                <div class="btn-group">
+                    <a href="services.html" class="btn btn-primary btn-large">Explore Services</a>
+                    <a href="contact.html" class="btn btn-secondary btn-large">Contact Us</a>
+                </div>
+                <div style="display:flex; gap: var(--spacing-xl); flex-wrap: wrap; margin-top: var(--spacing-md); color: var(--text-light);">
+                    <span><strong>25+ years</strong> in IT services</span>
+                    <span><strong>30+ years</strong> of consultation expertise</span>
+                    <span><strong>Clients</strong>: Startups to MNCs</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Your Trusted IT Partner</h2>
+            <p class="section-subtitle">
+                For over two decades, Systems &amp; Networks has helped organizations plan, implement, and manage dependable IT environments. We combine practical engineering with business-first thinking to deliver secure, high-availability solutions tailored to your goals, timelines, and budgets.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--spacing-2xl);">
+                <div class="card animate-on-scroll slide-up">
+                    <h3 class="card-title">Outcome-Focused Delivery</h3>
+                    <p class="card-text">Clear scope, measurable milestones, and predictable execution—so your teams stay productive and your projects stay on track.</p>
+                </div>
+                <div class="card animate-on-scroll slide-up">
+                    <h3 class="card-title">Secure by Design</h3>
+                    <p class="card-text">Best-practice architectures and hardened configurations to protect users, systems, and data without slowing you down.</p>
+                </div>
+                <div class="card animate-on-scroll slide-up">
+                    <h3 class="card-title">Dependable Support</h3>
+                    <p class="card-text">Responsive assistance from experienced engineers—covering procurement, deployment, lifecycle management, and ongoing maintenance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Services at a Glance</h2>
+            <p class="section-subtitle">Comprehensive IT services to plan, build, and run modern infrastructure.</p>
+            <div class="services-grid grid animate-on-scroll fade-in" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--spacing-2xl);">
+                <!-- IT Infrastructure -->
+                <div class="card" aria-label="IT Infrastructure">
+                    <div class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="60" height="60" fill="currentColor">
+                            <path d="M4 5h16v6H4zM4 13h16v6H4zM7 7h2v2H7zM7 15h2v2H7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">IT Infrastructure</h3>
+                    <p class="card-text">Design and deployment of secure, resilient on‑prem and hybrid environments.</p>
+                </div>
+                <!-- Networking -->
+                <div class="card" aria-label="Networking">
+                    <div class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="60" height="60" fill="currentColor">
+                            <path d="M12 3a3 3 0 110 6 3 3 0 010-6zm0 6v6m-6 6a3 3 0 110-6 3 3 0 010 6zm12 0a3 3 0 110-6 3 3 0 010 6zM6 17h12"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Networking</h3>
+                    <p class="card-text">LAN/WAN, Wi‑Fi, routing, switching, and secure remote connectivity.</p>
+                </div>
+                <!-- Servers & Cloud -->
+                <div class="card" aria-label="Servers and Cloud">
+                    <div class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="60" height="60" fill="currentColor">
+                            <path d="M6 16a4 4 0 010-8 5 5 0 019.6-1.2A4.5 4.5 0 1118 16H6z"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Servers &amp; Cloud</h3>
+                    <p class="card-text">Virtualization, storage, backup, and cloud integration for scale and continuity.</p>
+                </div>
+                <!-- Computers & Laptops -->
+                <div class="card" aria-label="Computers and Laptops">
+                    <div class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="60" height="60" fill="currentColor">
+                            <path d="M4 5h16v10H4zM2 17h20v2H2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Computers &amp; Laptops</h3>
+                    <p class="card-text">Procurement, configuration, and lifecycle management for end‑user devices.</p>
+                </div>
+                <!-- IT Rentals -->
+                <div class="card" aria-label="IT Rentals">
+                    <div class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="60" height="60" fill="currentColor">
+                            <path d="M6 7h12l2 4H4l2-4zm-2 6h16v6H4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">IT Rentals</h3>
+                    <p class="card-text">Short‑term and project‑based hardware rentals to meet demand surges.</p>
+                </div>
+                <!-- Domains, Hosting, Email -->
+                <div class="card" aria-label="Domains, Hosting, Email">
+                    <div class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="60" height="60" fill="currentColor">
+                            <path d="M3 5h18v14H3zM4 6l8 6 8-6"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Domain, Hosting &amp; Email</h3>
+                    <p class="card-text">Reseller for domains and hosting with professional email setup.</p>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="services.html" class="btn btn-primary">View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Highlight -->
+    <section style="background: var(--bg-light);">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--spacing-2xl); align-items: center;" class="animate-on-scroll slide-up">
+                <div class="card" style="text-align: center;">
+                    <h3 class="text-primary" style="margin-bottom: var(--spacing-sm);">
+                        <span class="counter" data-target="25">25</span>+
+                    </h3>
+                    <p class="card-text">Years in IT Services</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <h3 class="text-primary" style="margin-bottom: var(--spacing-sm);">
+                        <span class="counter" data-target="30">30</span>+
+                    </h3>
+                    <p class="card-text">Years of Consultation Experience</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <h3 class="text-primary" style="margin-bottom: var(--spacing-sm);">Startups → MNCs</h3>
+                    <p class="card-text">Trusted by teams of every size</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section style="background: var(--primary-color); color: var(--white);">
+        <div class="container" style="display: grid; gap: var(--spacing-lg); text-align: center;">
+            <h2 class="animate-on-scroll fade-in">Ready to strengthen your IT?</h2>
+            <p class="animate-on-scroll fade-in" style="max-width: 720px; margin: 0 auto;">
+                Speak with a specialist about infrastructure upgrades, network design, or on‑demand rentals. We’ll help you scope the right solution—fast.
+            </p>
+            <div class="btn-group animate-on-scroll slide-up" style="justify-content: center;">
+                <a href="contact.html" class="btn btn-secondary btn-large" style="border-color: var(--white); color: var(--white);">Contact Sales</a>
+                <a href="tel:+1234567890" class="btn btn-primary btn-large" style="background: var(--white); color: var(--primary-color); border-color: var(--white);">Call +1 (234) 567-890</a>
+            </div>
+        </div>
+    </section>
+
 </main>
 
 <!-- FOOTER -->
@@ -127,6 +282,7 @@
 
 <!-- JavaScript -->
 <script src="js/header-footer.js"></script>
+<script src="js/animations.js"></script>
 <script src="js/main.js"></script>
 
 </body>
