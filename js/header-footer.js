@@ -12,19 +12,42 @@ document.addEventListener('DOMContentLoaded', function() {
  */
 async function loadHeaderFooterComponents() {
     try {
-        // Load header
         const headerContainer = document.getElementById('header-container');
-        if (headerContainer) {
-            const headerResponse = await fetch('./includes/header.html');
-            const headerHTML = await headerResponse.text();
+        const footerContainer = document.getElementById('footer-container');
+
+        // Prepare parallel fetches if containers exist
+        const headerPromise = headerContainer
+            ? fetch('./includes/header.html').then(async (res) => {
+                if (!res.ok) {
+                    console.error('Failed to load header:', res.status, res.statusText);
+                    return null;
+                }
+                return res.text();
+            }).catch((err) => {
+                console.error('Header fetch error:', err);
+                return null;
+            })
+            : Promise.resolve(null);
+
+        const footerPromise = footerContainer
+            ? fetch('./includes/footer.html').then(async (res) => {
+                if (!res.ok) {
+                    console.error('Failed to load footer:', res.status, res.statusText);
+                    return null;
+                }
+                return res.text();
+            }).catch((err) => {
+                console.error('Footer fetch error:', err);
+                return null;
+            })
+            : Promise.resolve(null);
+
+        const [headerHTML, footerHTML] = await Promise.all([headerPromise, footerPromise]);
+
+        if (headerContainer && typeof headerHTML === 'string') {
             headerContainer.innerHTML = headerHTML;
         }
-        
-        // Load footer
-        const footerContainer = document.getElementById('footer-container');
-        if (footerContainer) {
-            const footerResponse = await fetch('./includes/footer.html');
-            const footerHTML = await footerResponse.text();
+        if (footerContainer && typeof footerHTML === 'string') {
             footerContainer.innerHTML = footerHTML;
         }
         

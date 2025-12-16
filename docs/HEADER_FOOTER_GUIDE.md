@@ -190,6 +190,27 @@ Already included in `<head>`:
 - Accessibility support (ARIA attributes)
 - Responsive hamburger animation
 
+## SEO & Crawlability Considerations
+
+Because the header and footer are injected dynamically using JavaScript (`fetch` in `js/header-footer.js`), some search engine crawlers may:
+- Not execute JavaScript at all, or
+- Not wait for asynchronous requests to finish.
+
+Implications:
+- Navigation links contained in the dynamic header/footer may not be discovered during a basic crawl.
+- Internal linking strength could be reduced if crawlers miss these links.
+
+Recommendations and Mitigations:
+- Maintain an XML sitemap (`sitemap.xml`) that lists all key pages so crawlers can discover them regardless of JS execution.
+- Include important internal links within the static body content (e.g., homepage sections linking to Services and Contact).
+- For critical pages, consider a static HTML fallback by inlining minimal navigation to ensure crawlability.
+- Ensure unique `<title>` and meta descriptions per page, and allow access to resources via `robots.txt`.
+- Keep scripts `defer`red and assets lightweight to improve load speed, which can aid crawl/render behavior for JS-enabled crawlers.
+
+Implementation Notes:
+- The loader validates HTTP status (`response.ok`) and avoids injecting server error pages.
+- Header and footer are fetched in parallel to reduce total load time.
+
 ## Customization Guide
 
 ### Change Company Information

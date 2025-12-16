@@ -491,12 +491,14 @@ section {
     text-decoration: none;
 }
 
-/* Any anchor styled as a button should not underline */
-a[class*="btn"],
-a[class*="btn"]:hover,
-a[class*="btn"]:focus,
-a[class*="btn"]:active,
-a[class*="btn"]:visited {
+/* Any anchor styled as a button should not underline
+   Note: Avoid attribute selectors like [class*="btn"] to prevent
+   unintended matches (e.g., "ribbon"). Use explicit class selectors. */
+a.btn,
+a.btn:hover,
+a.btn:focus,
+a.btn:active,
+a.btn:visited {
     text-decoration: none;
 }
 

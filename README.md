@@ -127,6 +127,20 @@ Update these placeholders throughout the site:
 - Security headers (X-Content-Type-Options, X-Frame-Options, X-XSS-Protection)
 - Directory listing prevention
 
+## 🔍 SEO & Crawlability Notes
+
+- The header and footer are loaded dynamically via JavaScript (`fetch` in `js/header-footer.js`). Some crawlers may not execute JS or may not wait for network requests, so navigation links in the header/footer might not be discovered during a basic crawl.
+- Mitigations:
+   - Keep `sitemap.xml` up to date with all key pages.
+   - Include important internal links within static page content (e.g., homepage links to Services and Contact).
+   - Consider minimal static navigation on high-priority pages if crawlability is essential.
+   - Ensure unique page `<title>` and meta descriptions; allow access to CSS/JS in `robots.txt`.
+   - Use `defer` for scripts and keep assets lightweight to improve render speed for JS-enabled crawlers.
+
+Implementation details:
+- Header/footer loading validates `response.ok` and fetches both components in parallel to avoid injecting error pages and to reduce load time.
+- If JS fails or resources are unavailable, containers remain empty and the rest of the page remains usable.
+
 ## 🌐 Deployment
 
 To deploy on Linux shared hosting:
@@ -138,6 +152,21 @@ To deploy on Linux shared hosting:
 5. Test on multiple devices and browsers
 
 See [PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md) for detailed deployment notes.
+
+### Deployment Checklist (Linux Shared Hosting)
+- Place all site files at the web root (public_html or htdocs).
+- Include `.htaccess` with:
+   - HTTPS redirect (excludes localhost)
+   - Disable directory listing (`Options -Indexes`)
+   - Caching (`mod_expires`) and compression (`mod_deflate`) directives
+   - Security headers (X-Content-Type-Options, X-Frame-Options, X-XSS-Protection, Referrer-Policy, Permissions-Policy, HSTS)
+- Confirm `robots.txt` and `sitemap.xml` exist and reflect live URLs.
+- Validate unique titles/meta descriptions per page.
+- Ensure JS and CSS paths are correct after upload.
+- Verify header/footer load via JS on the host (or inline minimal nav for critical pages).
+- Check file permissions: 644 files, 755 directories.
+- Test HTTPS redirect and non-indexable directories.
+- Run through pages on mobile and desktop; verify performance.
 
 ## ✅ Browser Support
 
