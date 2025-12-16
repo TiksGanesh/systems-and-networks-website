@@ -1,0 +1,150 @@
+/* ===================================
+   Responsive Media Queries
+   =================================== */
+
+/* Large Desktop (1200px and above) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* Desktop (992px to 1199px) */
+@media (max-width: 1199px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+/* Tablet (768px to 991px) */
+@media (max-width: 991px) {
+    .container {
+        max-width: 720px;
+    }
+    
+    /* Adjust typography */
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Mobile (576px to 767px) */
+@media (max-width: 767px) {
+    .container {
+        max-width: 540px;
+        padding: 0 1rem;
+    }
+    
+    /* Stack columns */
+    .row {
+        flex-direction: column;
+    }
+    
+    .col {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    /* Mobile navigation */
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--white);
+        box-shadow: var(--shadow);
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    /* Adjust spacing */
+    section {
+        padding: 3rem 0;
+    }
+    
+    /* Typography adjustments */
+    h1 {
+        font-size: 1.75rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+    }
+}
+
+/* Small Mobile (below 576px) */
+@media (max-width: 575px) {
+    .container {
+        padding: 0 0.75rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.35rem;
+    }
+    
+    /* Buttons */
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Images */
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Landscape mode on phones */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero-section {
+        min-height: auto;
+        padding: 2rem 0;
+    }
+}
+
+/* Print styles */
+@media print {
+    header, footer, .nav-menu, .mobile-menu-toggle {
+        display: none;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        color: black;
+    }
+    
+    a {
+        text-decoration: underline;
+        color: black;
+    }
+    
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+}
