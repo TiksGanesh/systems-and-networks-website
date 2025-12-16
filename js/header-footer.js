@@ -1,11 +1,41 @@
 /**
  * Header & Footer Functionality
- * Mobile menu toggle and responsive behavior
+ * Mobile menu toggle, responsive behavior, and dynamic component loading
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    initializeHeaderFooter();
+    loadHeaderFooterComponents();
 });
+
+/**
+ * Load header and footer from separate component files
+ */
+async function loadHeaderFooterComponents() {
+    try {
+        // Load header
+        const headerContainer = document.getElementById('header-container');
+        if (headerContainer) {
+            const headerResponse = await fetch('./includes/header.html');
+            const headerHTML = await headerResponse.text();
+            headerContainer.innerHTML = headerHTML;
+        }
+        
+        // Load footer
+        const footerContainer = document.getElementById('footer-container');
+        if (footerContainer) {
+            const footerResponse = await fetch('./includes/footer.html');
+            const footerHTML = await footerResponse.text();
+            footerContainer.innerHTML = footerHTML;
+        }
+        
+        // Initialize header/footer functionality after components are loaded
+        initializeHeaderFooter();
+    } catch (error) {
+        console.error('Error loading header/footer components:', error);
+        // If dynamic loading fails, initialize existing header/footer
+        initializeHeaderFooter();
+    }
+}
 
 /**
  * Initialize header and footer functionality

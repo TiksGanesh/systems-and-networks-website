@@ -318,11 +318,21 @@ section {
     position: relative;
     display: block;
     padding: 0.5rem 0;
+    text-decoration: none;
 }
 
 .nav-link:hover,
+.nav-link:focus {
+    color: inherit; /* keep text color the same */
+    text-decoration: none; /* prevent underline on hover */
+    background-color: rgba(0, 0, 0, 0.06); /* subtle neutral selection style */
+    border-radius: var(--radius-sm);
+}
+
+/* Keep active state as indicator without underline */
 .nav-link.active {
     color: var(--primary-color);
+    text-decoration: none;
 }
 
 .nav-link.active::after {
@@ -466,12 +476,28 @@ section {
     transition: var(--transition-base);
     text-align: center;
     user-select: none;
-    white-space: nowrap;
+    white-space: normal;
 }
 
 .btn:focus {
     outline: 2px solid var(--primary-color);
     outline-offset: 2px;
+}
+
+/* Ensure links styled as buttons never show underline */
+.btn,
+.btn:hover,
+.btn:focus {
+    text-decoration: none;
+}
+
+/* Any anchor styled as a button should not underline */
+a[class*="btn"],
+a[class*="btn"]:hover,
+a[class*="btn"]:focus,
+a[class*="btn"]:active,
+a[class*="btn"]:visited {
+    text-decoration: none;
 }
 
 /* Primary Button */
@@ -535,6 +561,8 @@ section {
 .btn-group {
     display: flex;
     gap: var(--spacing-md);
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 /* ===================================
@@ -590,9 +618,16 @@ section {
     margin-bottom: var(--spacing-2xl);
 }
 
+/* Force three columns on wider screens when needed */
+.footer-content.footer-grid-3 {
+    grid-template-columns: repeat(3, minmax(260px, 1fr));
+}
+
 .footer-section {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    min-width: 0;
 }
 
 .footer-section h4 {
@@ -692,6 +727,7 @@ section {
     display: flex;
     gap: var(--spacing-md);
     margin-top: var(--spacing-lg);
+    flex-wrap: wrap;
 }
 
 .social-link {
@@ -732,6 +768,7 @@ section {
 }
 
 /* Responsive Footer */
+
 @media (max-width: 767px) {
     .main-footer {
         padding: var(--spacing-2xl) 0 var(--spacing-xl);
@@ -742,18 +779,26 @@ section {
         grid-template-columns: 1fr;
     }
     
+    /* Override footer-grid-3 on mobile to ensure all sections are visible */
+    .footer-content.footer-grid-3 {
+        grid-template-columns: 1fr;
+    }
+    
     .footer-section h4 {
         margin-bottom: var(--spacing-md);
+        word-break: break-word;
     }
     
     .social-links {
         gap: var(--spacing-sm);
+        justify-content: center;
     }
     
     .social-link {
         width: 36px;
         height: 36px;
     }
+    
 }
 
 /* ===================================
@@ -853,6 +898,20 @@ label {
 .grid { display: grid; }
 .hidden { display: none !important; }
 .invisible { visibility: hidden; }
+
+/* Simple two-column grid */
+.grid-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+    align-items: start;
+}
+
+@media (max-width: 767px) {
+    .grid-two {
+        grid-template-columns: 1fr;
+    }
+}
 
 /* Flexbox Utilities */
 .flex-between {
@@ -958,6 +1017,29 @@ label {
     
     section {
         padding: var(--spacing-2xl) 0;
+    }
+    
+    /* Mobile button improvements */
+    .btn {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: var(--spacing-md) var(--spacing-lg);
+        font-size: var(--font-size-sm);
+    }
+    
+    .btn-large {
+        width: 100%;
+        padding: var(--spacing-md) var(--spacing-lg);
+    }
+    
+    .btn-group {
+        flex-direction: column;
+    }
+    
+    .btn-group .btn {
+        width: 100%;
     }
 }
 
