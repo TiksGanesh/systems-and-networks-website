@@ -1,0 +1,164 @@
+/* ===================================
+   OPTION 1: MODERN GRADIENT STYLE
+   Bold, contemporary look with gradients and vibrant colors
+   =================================== */
+
+:root {
+    /* Enhanced Color Palette */
+    --primary-color: #0066CC;
+    --primary-gradient: linear-gradient(135deg, #0066CC 0%, #00AAFF 100%);
+    --secondary-gradient: linear-gradient(135deg, #6C5CE7 0%, #A29BFE 100%);
+    --accent-gradient: linear-gradient(135deg, #00D2FF 0%, #3A7BD5 100%);
+    --warm-gradient: linear-gradient(135deg, #FA8BFF 0%, #2BD2FF 90%);
+    
+    /* Accent Colors */
+    --accent-purple: #6C5CE7;
+    --accent-teal: #00D2A5;
+    --accent-orange: #FF6B6B;
+    --accent-pink: #FA8BFF;
+    
+    /* Background Colors */
+    --bg-gradient-light: linear-gradient(135deg, #F5F7FA 0%, #E8EFF7 100%);
+    --bg-gradient-primary: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+}
+
+/* Hero Section with Gradient */
+.hero-section {
+    background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%) !important;
+    color: white !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: pulse 8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.1); opacity: 0.5; }
+}
+
+.hero-section h1,
+.hero-section p,
+.hero-section span {
+    color: white !important;
+}
+
+/* Gradient Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, #0066CC 0%, #00AAFF 100%);
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #00AAFF 0%, #0066CC 100%);
+    transition: left 0.3s ease;
+}
+
+.btn-primary:hover::before {
+    left: 0;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 102, 204, 0.3);
+}
+
+/* Colorful Card Icons */
+.card-icon {
+    background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+    padding: 1rem;
+    border-radius: 12px;
+    width: 80px !important;
+    height: 80px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-icon svg {
+    color: white;
+}
+
+/* Card with different colored icons */
+.card:nth-child(1) .card-icon {
+    background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+}
+
+.card:nth-child(2) .card-icon {
+    background: linear-gradient(135deg, #00D2A5 0%, #00A67E 100%);
+}
+
+.card:nth-child(3) .card-icon {
+    background: linear-gradient(135deg, #FF6B6B 0%, #EE5A6F 100%);
+}
+
+.card:nth-child(4) .card-icon {
+    background: linear-gradient(135deg, #FFA500 0%, #FF8C00 100%);
+}
+
+.card:nth-child(5) .card-icon {
+    background: linear-gradient(135deg, #3A7BD5 0%, #00D2FF 100%);
+}
+
+.card:nth-child(6) .card-icon {
+    background: linear-gradient(135deg, #FA8BFF 0%, #2BD2FF 100%);
+}
+
+.card:nth-child(7) .card-icon {
+    background: linear-gradient(135deg, #A8EDEA 0%, #FED6E3 100%);
+}
+
+/* Enhanced Cards */
+.card {
+    border-left: 4px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, #667EEA, #764BA2) border-box;
+    border-left-width: 4px;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Section Backgrounds */
+section:nth-child(even) {
+    background: linear-gradient(135deg, #F5F7FA 0%, #E8EFF7 100%);
+}
+
+/* Animated Gradient Text for Headings */
+.section-title {
+    background: linear-gradient(135deg, #667EEA 0%, #764BA2 50%, #00D2A5 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* CTA Section with Bold Gradient */
+section[style*="background: var(--primary-color)"] {
+    background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%) !important;
+}

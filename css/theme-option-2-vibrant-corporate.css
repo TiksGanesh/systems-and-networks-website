@@ -1,0 +1,215 @@
+/* ===================================
+   OPTION 2: VIBRANT CORPORATE STYLE
+   Professional with pops of color and subtle patterns
+   =================================== */
+
+:root {
+    /* Multi-Color Palette */
+    --primary-blue: #0066CC;
+    --vibrant-teal: #00BFA5;
+    --vibrant-orange: #FF6F00;
+    --vibrant-purple: #7B1FA2;
+    --vibrant-green: #388E3C;
+    
+    /* Subtle Patterns */
+    --pattern-dots: radial-gradient(circle, rgba(0,102,204,0.05) 1px, transparent 1px);
+    --pattern-grid: linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px), 
+                    linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px);
+}
+
+/* Hero with Pattern Background */
+.hero-section {
+    background: linear-gradient(135deg, #0066CC 0%, #004080 100%) !important;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.08) 0%, transparent 50%),
+        linear-gradient(135deg, #0066CC 0%, #004080 100%);
+    color: white !important;
+}
+
+.hero-section h1,
+.hero-section p,
+.hero-section span {
+    color: white !important;
+}
+
+/* Colored Section Accents */
+section {
+    position: relative;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        #0066CC 0%, 
+        #00BFA5 25%, 
+        #FF6F00 50%, 
+        #7B1FA2 75%, 
+        #388E3C 100%);
+}
+
+section:nth-child(even) {
+    background: #FAFAFA;
+    background-image: var(--pattern-dots);
+    background-size: 20px 20px;
+}
+
+/* Colorful Service Icons */
+.card .card-icon {
+    width: 70px !important;
+    height: 70px !important;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.card:nth-child(1) .card-icon {
+    background: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
+    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+}
+
+.card:nth-child(2) .card-icon {
+    background: linear-gradient(135deg, #00BFA5 0%, #00A693 100%);
+    box-shadow: 0 4px 15px rgba(0, 191, 165, 0.3);
+}
+
+.card:nth-child(3) .card-icon {
+    background: linear-gradient(135deg, #FF6F00 0%, #E65100 100%);
+    box-shadow: 0 4px 15px rgba(255, 111, 0, 0.3);
+}
+
+.card:nth-child(4) .card-icon {
+    background: linear-gradient(135deg, #7B1FA2 0%, #6A1B9A 100%);
+    box-shadow: 0 4px 15px rgba(123, 31, 162, 0.3);
+}
+
+.card:nth-child(5) .card-icon {
+    background: linear-gradient(135deg, #388E3C 0%, #2E7D32 100%);
+    box-shadow: 0 4px 15px rgba(56, 142, 60, 0.3);
+}
+
+.card:nth-child(6) .card-icon {
+    background: linear-gradient(135deg, #0288D1 0%, #01579B 100%);
+    box-shadow: 0 4px 15px rgba(2, 136, 209, 0.3);
+}
+
+.card:nth-child(7) .card-icon {
+    background: linear-gradient(135deg, #C62828 0%, #B71C1C 100%);
+    box-shadow: 0 4px 15px rgba(198, 40, 40, 0.3);
+}
+
+.card .card-icon svg {
+    color: white;
+}
+
+/* Cards with Colored Top Border */
+.card {
+    border-top: 3px solid #E0E0E0;
+    transition: all 0.3s ease;
+}
+
+.card:nth-child(1) { border-top-color: #0066CC; }
+.card:nth-child(2) { border-top-color: #00BFA5; }
+.card:nth-child(3) { border-top-color: #FF6F00; }
+.card:nth-child(4) { border-top-color: #7B1FA2; }
+.card:nth-child(5) { border-top-color: #388E3C; }
+.card:nth-child(6) { border-top-color: #0288D1; }
+.card:nth-child(7) { border-top-color: #C62828; }
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card:nth-child(1):hover { box-shadow: 0 8px 30px rgba(0, 102, 204, 0.25); }
+.card:nth-child(2):hover { box-shadow: 0 8px 30px rgba(0, 191, 165, 0.25); }
+.card:nth-child(3):hover { box-shadow: 0 8px 30px rgba(255, 111, 0, 0.25); }
+
+/* Buttons with Color Variations */
+.btn-primary {
+    background: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
+    border: none;
+    color: white !important;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0052A3 0%, #004080 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 102, 204, 0.3);
+    color: white !important;
+}
+
+.btn-secondary {
+    background: white;
+    color: #0066CC !important;
+    border: 2px solid #0066CC;
+}
+
+.btn-secondary:hover {
+    background: #0066CC;
+    color: white !important;
+}
+
+/* Fix for CTA section buttons with inline styles */
+.btn-secondary[style*="color: var(--white)"] {
+    background: transparent !important;
+    color: white !important;
+    border-color: white !important;
+}
+
+.btn-secondary[style*="color: var(--white)"]:hover {
+    background: white !important;
+    color: #0066CC !important;
+    border-color: white !important;
+}
+
+.btn-primary[style*="background: var(--white)"] {
+    background: white !important;
+    color: #0066CC !important;
+    transition: all 0.3s ease;
+}
+
+.btn-primary[style*="background: var(--white)"]:hover {
+    background: #0066CC !important;
+    color: white !important;
+    border-color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 102, 204, 0.4);
+}
+
+/* Section Titles with Accent Underline */
+.section-title {
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #0066CC 0%, #00BFA5 50%, #FF6F00 100%);
+    border-radius: 2px;
+}
+
+/* Accent Bar for Statistics/Highlights */
+.card[style*="text-align: center"] h3 {
+    color: #0066CC;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.card[style*="text-align: center"]:nth-child(1) h3 { color: #0066CC; }
+.card[style*="text-align: center"]:nth-child(2) h3 { color: #00BFA5; }
+.card[style*="text-align: center"]:nth-child(3) h3 { color: #FF6F00; }
+.card[style*="text-align: center"]:nth-child(4) h3 { color: #7B1FA2; }

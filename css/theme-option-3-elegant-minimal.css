@@ -1,0 +1,217 @@
+/* ===================================
+   OPTION 3: ELEGANT MINIMALIST PLUS
+   Refined design with subtle colors and sophisticated touches
+   =================================== */
+
+:root {
+    /* Refined Color Palette */
+    --primary-navy: #1A2B4A;
+    --primary-blue: #2C5F8D;
+    --accent-teal: #4ECDC4;
+    --accent-gold: #F4C430;
+    --accent-coral: #FF6B9D;
+    --neutral-warm: #F8F9FA;
+}
+
+/* Hero Section - Dark with Subtle Overlay */
+.hero-section {
+    background: linear-gradient(135deg, #1A2B4A 0%, #2C5F8D 100%) !important;
+    position: relative;
+    color: white !important;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 30% 20%, rgba(78, 205, 196, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(244, 196, 48, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-section h1,
+.hero-section p,
+.hero-section span {
+    color: white !important;
+}
+
+/* Subtle Section Backgrounds */
+section:nth-child(odd) {
+    background: white;
+}
+
+section:nth-child(even) {
+    background: linear-gradient(180deg, #F8F9FA 0%, #FFFFFF 100%);
+}
+
+/* Refined Cards with Soft Shadows */
+.card {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    border-color: rgba(78, 205, 196, 0.3);
+}
+
+/* Elegant Icon Backgrounds */
+.card .card-icon {
+    width: 70px !important;
+    height: 70px !important;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(135deg, #F8F9FA 0%, #E8EAED 100%);
+    transition: all 0.3s ease;
+}
+
+.card:hover .card-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.card .card-icon svg {
+    color: #2C5F8D;
+    transition: all 0.3s ease;
+}
+
+.card:hover .card-icon svg {
+    color: #4ECDC4;
+}
+
+/* Different accent colors for each card */
+.card:nth-child(1):hover .card-icon {
+    background: linear-gradient(135deg, rgba(78, 205, 196, 0.1) 0%, rgba(78, 205, 196, 0.2) 100%);
+}
+
+.card:nth-child(2):hover .card-icon {
+    background: linear-gradient(135deg, rgba(244, 196, 48, 0.1) 0%, rgba(244, 196, 48, 0.2) 100%);
+}
+
+.card:nth-child(3):hover .card-icon {
+    background: linear-gradient(135deg, rgba(255, 107, 157, 0.1) 0%, rgba(255, 107, 157, 0.2) 100%);
+}
+
+.card:nth-child(4):hover .card-icon {
+    background: linear-gradient(135deg, rgba(44, 95, 141, 0.1) 0%, rgba(44, 95, 141, 0.2) 100%);
+}
+
+.card:nth-child(5):hover .card-icon {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(139, 92, 246, 0.2) 100%);
+}
+
+.card:nth-child(6):hover .card-icon {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.2) 100%);
+}
+
+.card:nth-child(7):hover .card-icon {
+    background: linear-gradient(135deg, rgba(251, 146, 60, 0.1) 0%, rgba(251, 146, 60, 0.2) 100%);
+}
+
+/* Refined Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, #2C5F8D 0%, #1A2B4A 100%);
+    border: none;
+    padding: 0.875rem 2rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #4ECDC4 0%, #3AB0A8 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(78, 205, 196, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #2C5F8D;
+    border: 2px solid #2C5F8D;
+    padding: 0.875rem 2rem;
+    font-weight: 600;
+}
+
+.btn-secondary:hover {
+    background: white;
+    border-color: #4ECDC4;
+    color: #4ECDC4;
+    box-shadow: 0 4px 15px rgba(78, 205, 196, 0.2);
+}
+
+/* Section Titles with Refined Styling */
+.section-title {
+    color: #1A2B4A;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #4ECDC4 0%, #2C5F8D 100%);
+    border-radius: 2px;
+}
+
+/* Accent Elements */
+.card-title {
+    color: #1A2B4A;
+    font-weight: 600;
+}
+
+.card-text {
+    color: #64748B;
+    line-height: 1.7;
+}
+
+/* Subtle Animation for Cards */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.card:hover {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Statistics Section - Clean Numbers */
+.card[style*="text-align: center"] h3 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #2C5F8D 0%, #4ECDC4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Refined Section Dividers */
+section + section::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(78, 205, 196, 0.3) 50%, 
+        transparent 100%);
+}
+
+/* WhatsApp and Call buttons styling */
+a[aria-label="Chat on WhatsApp"]:hover,
+a[class*="btn"]:hover {
+    box-shadow: 0 6px 20px rgba(78, 205, 196, 0.25);
+}
