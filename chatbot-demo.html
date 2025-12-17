@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FAQ Chatbot Demo - Systems & Networks">
+    <title>FAQ Chatbot Demo - Systems & Networks</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/icons/favicon.png">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/theme-option-2-vibrant-corporate.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+
+    <style>
+        /* Demo-specific styles */
+        .demo-section {
+            padding: 60px 0;
+            background: var(--bg-lighter);
+        }
+
+        .demo-card {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 24px;
+        }
+
+        .demo-card h2 {
+            color: var(--primary-color);
+            margin-bottom: 16px;
+        }
+
+        .demo-card h3 {
+            color: var(--text-dark);
+            margin-top: 24px;
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+        }
+
+        .demo-card ul {
+            margin-left: 24px;
+            margin-bottom: 16px;
+        }
+
+        .demo-card li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .demo-card code {
+            background: var(--bg-light);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+
+        .demo-card pre {
+            background: var(--bg-light);
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 16px 0;
+        }
+
+        .demo-card pre code {
+            background: none;
+            padding: 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .feature-item {
+            background: var(--bg-light);
+            padding: 16px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .feature-item strong {
+            color: var(--primary-color);
+        }
+
+        .cta-box {
+            background: var(--primary-color);
+            color: white;
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 32px 0;
+        }
+
+        .cta-box h3 {
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .cta-box p {
+            margin-bottom: 0;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Container (loaded dynamically) -->
+    <div id="header-container" role="banner" aria-label="Site Header"></div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" style="background: var(--primary-color); color: white;">
+            <div class="container" style="text-align: center; padding: 60px 20px;">
+                <h1 style="color: white; margin-bottom: 16px;">FAQ Chatbot Demo</h1>
+                <p style="font-size: 1.25rem; max-width: 700px; margin: 0 auto;">
+                    Try our intelligent FAQ chatbot! Click the chat button in the bottom-right corner to get started.
+                </p>
+            </div>
+        </section>
+
+        <!-- Demo Section -->
+        <section class="demo-section">
+            <div class="container">
+                <div class="demo-card">
+                    <h2>🤖 About the Chatbot</h2>
+                    <p>
+                        This is a fully offline, pure vanilla JavaScript FAQ chatbot designed for the Systems & Networks
+                        website. It requires no external dependencies, frameworks, or API calls.
+                    </p>
+
+                    <div class="cta-box">
+                        <h3>👇 Try It Now!</h3>
+                        <p>Click the blue chat button in the bottom-right corner to start chatting.</p>
+                    </div>
+
+                    <h3>✨ Key Features</h3>
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <strong>Offline Functionality</strong><br>
+                            Works without internet connection
+                        </div>
+                        <div class="feature-item">
+                            <strong>Smart Matching</strong><br>
+                            Keyword-based question matching
+                        </div>
+                        <div class="feature-item">
+                            <strong>Quick Replies</strong><br>
+                            One-click answers to common questions
+                        </div>
+                        <div class="feature-item">
+                            <strong>Typing Indicator</strong><br>
+                            Shows when bot is "thinking"
+                        </div>
+                        <div class="feature-item">
+                            <strong>Responsive Design</strong><br>
+                            Works on mobile and desktop
+                        </div>
+                        <div class="feature-item">
+                            <strong>Keyboard Support</strong><br>
+                            Accessible keyboard navigation
+                        </div>
+                    </div>
+
+                    <h3>💬 Try Asking About:</h3>
+                    <ul>
+                        <li>What services do you offer?</li>
+                        <li>Tell me about your company</li>
+                        <li>How can I contact you?</li>
+                        <li>What is networking?</li>
+                        <li>IT infrastructure services</li>
+                        <li>Cloud and server solutions</li>
+                        <li>Domain and hosting</li>
+                        <li>Annual maintenance contracts</li>
+                    </ul>
+                </div>
+
+                <div class="demo-card">
+                    <h2>📦 Integration Instructions</h2>
+                    <p>Adding the chatbot to your pages is simple:</p>
+
+                    <h3>1. Include CSS and JavaScript</h3>
+                    <p>Add these lines before the closing <code>&lt;/body&gt;</code> tag:</p>
+                    <pre><code>&lt;!-- Chatbot Styles --&gt;
+&lt;link rel="stylesheet" href="css/chatbot.css"&gt;
+
+&lt;!-- Chatbot Script --&gt;
+&lt;script src="js/chatbot.js"&gt;&lt;/script&gt;</code></pre>
+
+                    <h3>2. That's It!</h3>
+                    <p>
+                        The chatbot will automatically initialize when the page loads. No additional configuration needed.
+                        The chatbot button will appear in the bottom-right corner.
+                    </p>
+
+                    <h3>3. Customization (Optional)</h3>
+                    <p>You can customize the chatbot by editing the configuration in <code>js/chatbot.js</code>:</p>
+                    <ul>
+                        <li><strong>Bot name and status:</strong> Change <code>config.botName</code> and
+                            <code>config.botStatus</code>
+                        </li>
+                        <li><strong>Welcome message:</strong> Modify <code>config.welcomeMessage</code></li>
+                        <li><strong>Quick replies:</strong> Update <code>config.quickReplies</code> array</li>
+                        <li><strong>FAQ database:</strong> Add/edit entries in the <code>faqDatabase</code> array</li>
+                    </ul>
+
+                    <h3>4. Styling Customization</h3>
+                    <p>Colors and appearance can be customized in <code>css/chatbot.css</code>:</p>
+                    <ul>
+                        <li><strong>Primary color:</strong> Change <code>--chatbot-primary</code> variable</li>
+                        <li><strong>Message bubbles:</strong> Modify <code>--chatbot-user-bubble</code> and
+                            <code>--chatbot-bot-bubble</code>
+                        </li>
+                        <li><strong>Button position:</strong> Adjust <code>bottom</code> and <code>right</code> values on
+                            <code>.chatbot-button</code>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="demo-card">
+                    <h2>🎯 Technical Specifications</h2>
+                    <ul>
+                        <li><strong>No Dependencies:</strong> Pure vanilla JavaScript, HTML5, and CSS3</li>
+                        <li><strong>Offline Operation:</strong> No external API calls or internet required</li>
+                        <li><strong>Lightweight:</strong> Minimal file size (~23KB JS, ~12KB CSS)</li>
+                        <li><strong>Cross-browser:</strong> Works on all modern browsers</li>
+                        <li><strong>Responsive:</strong> Mobile-first design with full desktop support</li>
+                        <li><strong>Accessible:</strong> Keyboard navigation and ARIA labels</li>
+                        <li><strong>Performance:</strong> Smooth animations with GPU acceleration</li>
+                    </ul>
+                </div>
+
+                <div class="demo-card">
+                    <h2>🔧 How It Works</h2>
+                    <p>The chatbot uses an intelligent keyword-matching algorithm:</p>
+                    <ol>
+                        <li><strong>User Input:</strong> User types a question or clicks a quick reply button</li>
+                        <li><strong>Text Normalization:</strong> Input is normalized (lowercase, trimmed, etc.)</li>
+                        <li><strong>Keyword Matching:</strong> System searches FAQ database for matching keywords</li>
+                        <li><strong>Scoring:</strong> Each FAQ entry gets a similarity score based on keyword matches</li>
+                        <li><strong>Response:</strong> Best matching answer is displayed with typing animation</li>
+                        <li><strong>Fallback:</strong> If no good match, shows suggestions for popular topics</li>
+                    </ol>
+                </div>
+
+                <div class="demo-card">
+                    <h2>➕ Adding New FAQ Entries</h2>
+                    <p>To add new questions and answers, edit the <code>faqDatabase</code> array in
+                        <code>js/chatbot.js</code>:
+                    </p>
+                    <pre><code>{
+    keywords: ['example', 'sample', 'demo'],
+    question: 'Example Question',
+    answer: 'This is the answer that will be displayed.'
+}</code></pre>
+                    <p><strong>Tips:</strong></p>
+                    <ul>
+                        <li>Add multiple related keywords for better matching</li>
+                        <li>Use natural language in answers</li>
+                        <li>Keep answers concise but informative</li>
+                        <li>Use <code>&lt;br&gt;</code> for line breaks in answers</li>
+                    </ul>
+                </div>
+
+                <div class="demo-card" style="background: var(--bg-light); border: 2px solid var(--primary-color);">
+                    <h2>🚀 Ready to Use!</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 16px;">
+                        The chatbot is production-ready and can be integrated into any page of your website. Try it out
+                        by clicking the chat button in the bottom-right corner!
+                    </p>
+                    <p style="margin-bottom: 0;">
+                        <strong>Questions or need customization?</strong> Feel free to modify the FAQ database and
+                        styling to match your specific needs.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Container (loaded dynamically) -->
+    <div id="footer-container" role="contentinfo" aria-label="Site Footer"></div>
+
+    <!-- JavaScript -->
+    <script src="js/header-footer.js" defer></script>
+    <script src="js/main.js" defer></script>
+
+    <!-- Chatbot Scripts -->
+    <script src="js/chatbot.js"></script>
+
+</body>
+
+</html>

@@ -41,6 +41,7 @@ All documentation files are located in the `docs/` directory:
 | [**PROJECT_STRUCTURE.md**](docs/PROJECT_STRUCTURE.md) | Detailed explanation of the project folder structure, file purposes, and deployment notes for Linux shared hosting. |
 | [**HEADER_FOOTER_GUIDE.md**](docs/HEADER_FOOTER_GUIDE.md) | Comprehensive implementation guide for the header and footer components with code examples, customization instructions, and troubleshooting. |
 | [**HEADER_FOOTER_SUMMARY.md**](docs/HEADER_FOOTER_SUMMARY.md) | Quick reference summary of header and footer features, styling, and functionality. |
+| [**CHATBOT_GUIDE.md**](docs/CHATBOT_GUIDE.md) | Complete guide for the FAQ chatbot including integration, customization, FAQ management, and troubleshooting. |
 
 ## 🎨 Design System
 
@@ -75,6 +76,32 @@ The website features a professional header and footer system:
 - Copyright notice
 
 For detailed implementation info, see [HEADER_FOOTER_GUIDE.md](docs/HEADER_FOOTER_GUIDE.md) or [HEADER_FOOTER_SUMMARY.md](docs/HEADER_FOOTER_SUMMARY.md).
+
+## 🤖 FAQ Chatbot
+
+The website includes an intelligent FAQ chatbot to help visitors find information quickly:
+
+### Features
+- **Offline Operation** - No API calls or internet required
+- **Smart Matching** - Keyword-based question matching with fuzzy search
+- **Quick Replies** - One-click answers to common questions
+- **Typing Indicator** - Shows when bot is "thinking"
+- **Responsive Design** - Works seamlessly on mobile and desktop
+- **Keyboard Accessible** - Full keyboard navigation support
+
+### Quick Integration
+Simply add these lines to any page:
+
+```html
+<link rel="stylesheet" href="css/chatbot.css">
+<script src="js/chatbot.js"></script>
+```
+
+### Demo
+See `chatbot-demo.html` for a live demonstration and detailed integration instructions.
+
+### Documentation
+For complete customization, FAQ management, and troubleshooting, see [CHATBOT_GUIDE.md](docs/CHATBOT_GUIDE.md).
 
 ## 🔧 Technology Stack
 
