@@ -9,6 +9,23 @@
     <meta name="keywords" content="contact us, IT services contact, IT consultation, get in touch, IT support">
     <title>Contact Us - Systems & Networks</title>
 
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.sysandnet.com/contact.html">
+    <meta property="og:title" content="Contact Us - Systems & Networks">
+    <meta property="og:description" content="Get in touch for professional IT services and consultation. Reach us directly via email or phone for dependable IT services and project discussions.">
+    <meta property="og:site_name" content="Systems & Networks">
+    <meta property="og:locale" content="en_IN">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://www.sysandnet.com/contact.html">
+    <meta name="twitter:title" content="Contact Us - Systems & Networks">
+    <meta name="twitter:description" content="Get in touch for professional IT services and consultation. Reach us directly via email or phone for dependable IT services and project discussions.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.sysandnet.com/contact.html">
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/icons/favicon.png">
 
@@ -47,11 +64,13 @@
 
                                 <li>
                                     <span class="contact-label">Phone:</span>
-                                    <a href="tel:+919623268939">+91 96232 68939</a>
+                                    <a href="#" data-contact="KzkxIDk2MjMyIDY4OTM5" data-type="phone">Loading...</a>
+                                    <noscript><button class="contact-reveal" data-reveal="KzkxIDk2MjMyIDY4OTM5" data-target="phone-main">Click to reveal</button><span id="phone-main"></span></noscript>
                                 </li>
                                 <li>
                                     <span class="contact-label">Email:</span>
-                                    <a href="mailto:info@sysandnet.com">info@sysandnet.com</a>
+                                    <a href="#" data-contact="aW5mb0BzeXNhbmRuZXQuY29t" data-type="email">Loading...</a>
+                                    <noscript><button class="contact-reveal" data-reveal="aW5mb0BzeXNhbmRuZXQuY29t" data-target="email-main">Click to reveal</button><span id="email-main"></span></noscript>
                                 </li>
                                 <li>
                                     <span class="contact-label">LinkedIn:</span>
@@ -68,9 +87,9 @@
                                     requirements and timelines.</p>
                                 <p>&nbsp;</p>
                                 <div class="btn-group mt-2">
-                                    <a href="tel:+919623268939" class="btn btn-primary">Call Us</a>
-                                    <a href="mailto:info@systemsandnetworks.com" class="btn btn-secondary">Email Us</a>
-                                    <a href="https://wa.me/919623268939" target="_blank" rel="noopener noreferrer"
+                                    <a href="#" data-contact="KzkxIDk2MjMyIDY4OTM5" data-type="phone" class="btn btn-primary">Call Us</a>
+                                    <a href="#" data-contact="aW5mb0BzeXNhbmRuZXQuY29t" data-type="email" class="btn btn-secondary">Email Us</a>
+                                    <a href="#" data-contact="KzkxOTYyMzI2ODkzOQ==" data-type="whatsapp" target="_blank" rel="noopener noreferrer"
                                         class="btn btn-secondary" aria-label="Chat on WhatsApp">Chat on WhatsApp</a>
                                 </div>
                             </div>
@@ -88,7 +107,7 @@
                     <div class="grid-two">
                         <div>
                             <div
-                                style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-lg);">
+                                style="position: relative; height: 400px; overflow: hidden; border-radius: var(--radius-lg);">
                                 <iframe title="Map: Systems &amp; Networks"
                                     src="https://www.google.com/maps?q=18.476430878609225,73.86147995450605&z=15&output=embed"
                                     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
@@ -96,12 +115,11 @@
                                     aria-label="Google Map showing the company location"></iframe>
                             </div>
                         </div>
-                        <div style="display:flex; flex-direction:column; align-items:center; gap: var(--spacing-md);">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=MECARD%3AN%3ASystems%20%26%20Networks%20%28Milind%20Gaikwad%29%3BTEL%3A%2B919623268939%3BEMAIL%3Ainfo%40sysandnet.com%3BURL%3Ahttps%3A%2F%2Fwww.sysandnet.com%3B%3B"
-                                alt="QR code with Systems &amp; Networks contact details" width="220" height="220"
-                                style="display:block;" />
-                            <p class="card-text" style="text-align:center;">Point your camera to add our contact details
-                                quickly.</p>
+                        <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap: var(--spacing-md); padding: var(--spacing-xl); background: var(--bg-lighter); border-radius: var(--radius-lg); height: 400px;">
+                            <h3 style="margin: 0; font-size: 1.25rem;">Quick Contact</h3>
+                            <p class="card-text" style="text-align:center; margin: 0;">Scan the QR code below to save our contact details instantly to your phone.</p>
+                            <div id="qr-code-container" style="width: 220px; height: 220px; display: flex; align-items: center; justify-content: center; background: white; border-radius: var(--radius-md);"></div>
+                            <p class="card-text" style="text-align:center; font-size: 0.875rem; color: var(--text-light); margin: 0;">Compatible with all smartphones</p>
                         </div>
                     </div>
                 </article>
@@ -117,6 +135,29 @@
     <script src="js/header-footer.js" defer></script>
     <script src="js/animations.js" defer></script>
     <script src="js/main.js" defer></script>
+    <script>
+        // Generate QR code client-side to avoid exposing contact info in URL
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                const container = document.getElementById('qr-code-container');
+                if (container) {
+                    // Decode contact info and generate QR data
+                    const phone = atob('KzkxOTYyMzI2ODkzOQ==');
+                    const email = atob('aW5mb0BzeXNhbmRuZXQuY29t');
+                    const vcardData = 'MECARD:N:Systems & Networks (Milind Gaikwad);TEL:' + phone + ';EMAIL:' + email + ';URL:https://www.sysandnet.com;;';
+                    const qrUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=' + encodeURIComponent(vcardData);
+                    
+                    const img = document.createElement('img');
+                    img.src = qrUrl;
+                    img.alt = 'QR code with Systems & Networks contact details';
+                    img.width = 220;
+                    img.height = 220;
+                    img.style.display = 'block';
+                    container.appendChild(img);
+                }
+            }, 500);
+        });
+    </script>
 
 </body>
 

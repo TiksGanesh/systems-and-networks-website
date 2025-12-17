@@ -24,7 +24,6 @@ systems-and-networks-website/
 ├── index.html             # Homepage
 ├── about.html             # About page
 ├── services.html          # Services page
-├── clients.html           # Clients/Why Choose Us page
 ├── contact.html           # Contact page
 ├── .htaccess              # Apache configuration
 ├── robots.txt             # SEO directives
@@ -104,18 +103,17 @@ For detailed implementation info, see [HEADER_FOOTER_GUIDE.md](docs/HEADER_FOOTE
 
 ## 📧 Contact Information
 
-Update these placeholders throughout the site:
-- **Email**: info@systemsandnetworks.com
-- **Phone**: +1 (234) 567-890
-- **Address**: Your City, Your State 12345
+Current contact details:
+- **Email**: info@sysandnet.com
+- **Phone**: +91 96232 68939
 - **LinkedIn**: https://www.linkedin.com/company/systems-networks/
+- **Website**: https://www.sysandnet.com
 
 ## 📝 Pages Included
 
 - **index.html** - Homepage with hero section
 - **about.html** - Company information and background
 - **services.html** - Services offered by the company
-- **clients.html** - Client testimonials and case studies
 - **contact.html** - Contact information and inquiry methods
 - **404.html** - Custom error page
 

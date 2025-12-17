@@ -53,6 +53,11 @@ async function loadHeaderFooterComponents() {
         
         // Initialize header/footer functionality after components are loaded
         initializeHeaderFooter();
+        
+        // Trigger contact info decoding after footer is loaded
+        if (window.decodeContactInfo && typeof window.decodeContactInfo === 'function') {
+            window.decodeContactInfo();
+        }
     } catch (error) {
         console.error('Error loading header/footer components:', error);
         // If dynamic loading fails, initialize existing header/footer

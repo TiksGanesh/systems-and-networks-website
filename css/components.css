@@ -242,3 +242,28 @@
     color: #721c24;
     border: 1px solid #f5c6cb;
 }
+
+/* Contact Reveal Button (Anti-scraper fallback) */
+.contact-reveal {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-left: 0.5rem;
+}
+
+.contact-reveal:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.contact-reveal:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
