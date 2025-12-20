@@ -467,9 +467,10 @@ function handleUserMessage(userMessage) {
 ## Security Considerations
 
 ### XSS Prevention
-- User input is not directly inserted as HTML
-- Use `textContent` instead of `innerHTML` for user messages
-- Sanitize any dynamic content
+- User messages are rendered using `textContent` instead of `innerHTML` to prevent XSS attacks
+- Bot messages use `innerHTML` to allow formatting (e.g., `<br>` tags), but only trusted content from the FAQ database is used
+- In `js/chatbot.js`, the `addMessage()` function checks the message type and uses `textContent` for user input
+- Never insert unsanitized user input via `innerHTML`
 
 ### Privacy
 - No data is sent to external servers

@@ -165,20 +165,21 @@
         keywords.forEach(keyword => {
             const normalizedKeyword = normalizeText(keyword);
             
-            // Exact match
+            // Exact phrase match
             if (normalizedInput.includes(normalizedKeyword)) {
+                // Give full score for exact phrase match and skip word-level scoring
                 score += 10;
+            } else {
+                // Word-level and substring partial match
+                const words = normalizedInput.split(' ');
+                words.forEach(word => {
+                    if (word === normalizedKeyword) {
+                        score += 5;
+                    } else if (word.includes(normalizedKeyword) || normalizedKeyword.includes(word)) {
+                        score += 2;
+                    }
+                });
             }
-            
-            // Partial match (word boundaries)
-            const words = normalizedInput.split(' ');
-            words.forEach(word => {
-                if (word === normalizedKeyword) {
-                    score += 5;
-                } else if (word.includes(normalizedKeyword) || normalizedKeyword.includes(word)) {
-                    score += 2;
-                }
-            });
         });
         
         return score;
@@ -199,8 +200,8 @@
             }
         });
         
-        // Only return match if score is above threshold
-        return highestScore > 1 ? bestMatch : null;
+        // Only return match if score is above threshold (at least one exact word match)
+        return highestScore >= 5 ? bestMatch : null;
     }
 
     /**
@@ -212,10 +213,25 @@
     }
 
     /**
+     * Shuffle an array using the Fisher-Yates algorithm
+     * Returns a new shuffled array without mutating the original
+     */
+    function shuffleArray(array) {
+        const result = array.slice(); // shallow copy to preserve original
+        for (let i = result.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            const temp = result[i];
+            result[i] = result[j];
+            result[j] = temp;
+        }
+        return result;
+    }
+
+    /**
      * Get random suggestions from FAQ database
      */
     function getRandomSuggestions(count = 3) {
-        const shuffled = [...faqDatabase].sort(() => 0.5 - Math.random());
+        const shuffled = shuffleArray(faqDatabase);
         return shuffled.slice(0, count).map(faq => faq.question);
     }
 
@@ -309,25 +325,44 @@
         const messageDiv = document.createElement('div');
         messageDiv.className = `chatbot-message ${type}`;
         
-        const avatarHTML = `
-            <div class="chatbot-message-avatar">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                    ${type === 'bot' 
-                        ? '<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>'
-                        : '<path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>'
-                    }
-                </svg>
-            </div>
+        // Create avatar element
+        const avatarDiv = document.createElement('div');
+        avatarDiv.className = 'chatbot-message-avatar';
+        avatarDiv.innerHTML = `
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                ${type === 'bot' 
+                    ? '<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>'
+                    : '<path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>'
+                }
+            </svg>
         `;
         
-        const bubbleHTML = `
-            <div>
-                <div class="chatbot-message-bubble">${text}</div>
-                ${showTime ? `<div class="chatbot-message-time">${getCurrentTime()}</div>` : ''}
-            </div>
-        `;
+        // Create bubble container
+        const bubbleContainer = document.createElement('div');
         
-        messageDiv.innerHTML = avatarHTML + bubbleHTML;
+        // Create message bubble
+        const bubbleDiv = document.createElement('div');
+        bubbleDiv.className = 'chatbot-message-bubble';
+        
+        // Use textContent for user messages (prevent XSS), innerHTML for bot messages (allow formatting)
+        if (type === 'user') {
+            bubbleDiv.textContent = text;
+        } else {
+            bubbleDiv.innerHTML = text;
+        }
+        
+        bubbleContainer.appendChild(bubbleDiv);
+        
+        // Add timestamp if requested
+        if (showTime) {
+            const timeDiv = document.createElement('div');
+            timeDiv.className = 'chatbot-message-time';
+            timeDiv.textContent = getCurrentTime();
+            bubbleContainer.appendChild(timeDiv);
+        }
+        
+        messageDiv.appendChild(avatarDiv);
+        messageDiv.appendChild(bubbleContainer);
         messagesContainer.appendChild(messageDiv);
         
         // Scroll to bottom
@@ -505,23 +540,35 @@
        =================================== */
     
     function attachEventListeners() {
+        // Get DOM elements with error handling
+        const chatbotButton = document.getElementById('chatbotButton');
+        const chatbotClose = document.getElementById('chatbotClose');
+        const chatbotClear = document.getElementById('chatbotClear');
+        const chatbotSend = document.getElementById('chatbotSend');
+        const chatbotInput = document.getElementById('chatbotInput');
+        
+        // Verify all required elements exist
+        if (!chatbotButton || !chatbotClose || !chatbotClear || !chatbotSend || !chatbotInput) {
+            console.error('Chatbot: Required DOM elements not found. Chatbot initialization failed.');
+            return;
+        }
+        
         // Open chatbot
-        document.getElementById('chatbotButton').addEventListener('click', openChatbot);
+        chatbotButton.addEventListener('click', openChatbot);
         
         // Close chatbot
-        document.getElementById('chatbotClose').addEventListener('click', closeChatbot);
+        chatbotClose.addEventListener('click', closeChatbot);
         
         // Clear chat
-        document.getElementById('chatbotClear').addEventListener('click', () => {
+        chatbotClear.addEventListener('click', () => {
             if (confirm('Are you sure you want to clear the chat history?')) {
                 clearChat();
             }
         });
         
         // Send message button
-        document.getElementById('chatbotSend').addEventListener('click', () => {
-            const inputField = document.getElementById('chatbotInput');
-            const message = inputField.value.trim();
+        chatbotSend.addEventListener('click', () => {
+            const message = chatbotInput.value.trim();
             
             if (message) {
                 clearQuickReplies();
@@ -530,10 +577,10 @@
         });
         
         // Send message on Enter key
-        document.getElementById('chatbotInput').addEventListener('keypress', (e) => {
+        chatbotInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 e.preventDefault();
-                document.getElementById('chatbotSend').click();
+                chatbotSend.click();
             }
         });
         
