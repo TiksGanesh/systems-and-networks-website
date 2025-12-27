@@ -10,19 +10,19 @@
     --vibrant-orange: #FF6F00;
     --vibrant-purple: #7B1FA2;
     --vibrant-green: #388E3C;
-    
+
     /* Subtle Patterns */
-    --pattern-dots: radial-gradient(circle, rgba(0,102,204,0.05) 1px, transparent 1px);
-    --pattern-grid: linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px), 
-                    linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px);
+    --pattern-dots: radial-gradient(circle, rgba(0, 102, 204, 0.05) 1px, transparent 1px);
+    --pattern-grid: linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
 }
 
 /* Hero with Pattern Background */
 .hero-section {
     background: linear-gradient(135deg, #0066CC 0%, #004080 100%) !important;
-    background-image: 
-        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.08) 0%, transparent 50%),
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
         linear-gradient(135deg, #0066CC 0%, #004080 100%);
     color: white !important;
 }
@@ -45,12 +45,12 @@ section::before {
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(90deg, 
-        #0066CC 0%, 
-        #00BFA5 25%, 
-        #FF6F00 50%, 
-        #7B1FA2 75%, 
-        #388E3C 100%);
+    background: linear-gradient(90deg,
+            #0066CC 0%,
+            #00BFA5 25%,
+            #FF6F00 50%,
+            #7B1FA2 75%,
+            #388E3C 100%);
 }
 
 section:nth-child(even) {
@@ -115,22 +115,58 @@ section:nth-child(even) {
     transition: all 0.3s ease;
 }
 
-.card:nth-child(1) { border-top-color: #0066CC; }
-.card:nth-child(2) { border-top-color: #00BFA5; }
-.card:nth-child(3) { border-top-color: #FF6F00; }
-.card:nth-child(4) { border-top-color: #7B1FA2; }
-.card:nth-child(5) { border-top-color: #388E3C; }
-.card:nth-child(6) { border-top-color: #0288D1; }
-.card:nth-child(7) { border-top-color: #C62828; }
+.card:nth-child(1) {
+    border-top-color: #0066CC;
+}
+
+.card:nth-child(2) {
+    border-top-color: #00BFA5;
+}
+
+.card:nth-child(3) {
+    border-top-color: #FF6F00;
+}
+
+.card:nth-child(4) {
+    border-top-color: #7B1FA2;
+}
+
+.card:nth-child(5) {
+    border-top-color: #388E3C;
+}
+
+.card:nth-child(6) {
+    border-top-color: #0288D1;
+}
+
+.card:nth-child(7) {
+    border-top-color: #C62828;
+}
+
+.card:nth-child(8) {
+    border-top-color: #F57C00;
+}
+
+.card:nth-child(9) {
+    border-top-color: #1976D2;
+}
 
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
-.card:nth-child(1):hover { box-shadow: 0 8px 30px rgba(0, 102, 204, 0.25); }
-.card:nth-child(2):hover { box-shadow: 0 8px 30px rgba(0, 191, 165, 0.25); }
-.card:nth-child(3):hover { box-shadow: 0 8px 30px rgba(255, 111, 0, 0.25); }
+.card:nth-child(1):hover {
+    box-shadow: 0 8px 30px rgba(0, 102, 204, 0.25);
+}
+
+.card:nth-child(2):hover {
+    box-shadow: 0 8px 30px rgba(0, 191, 165, 0.25);
+}
+
+.card:nth-child(3):hover {
+    box-shadow: 0 8px 30px rgba(255, 111, 0, 0.25);
+}
 
 /* Buttons with Color Variations */
 .btn-primary {
@@ -209,7 +245,18 @@ section:nth-child(even) {
     font-weight: 700;
 }
 
-.card[style*="text-align: center"]:nth-child(1) h3 { color: #0066CC; }
-.card[style*="text-align: center"]:nth-child(2) h3 { color: #00BFA5; }
-.card[style*="text-align: center"]:nth-child(3) h3 { color: #FF6F00; }
-.card[style*="text-align: center"]:nth-child(4) h3 { color: #7B1FA2; }
+.card[style*="text-align: center"]:nth-child(1) h3 {
+    color: #0066CC;
+}
+
+.card[style*="text-align: center"]:nth-child(2) h3 {
+    color: #00BFA5;
+}
+
+.card[style*="text-align: center"]:nth-child(3) h3 {
+    color: #FF6F00;
+}
+
+.card[style*="text-align: center"]:nth-child(4) h3 {
+    color: #7B1FA2;
+}

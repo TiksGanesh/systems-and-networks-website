@@ -10,13 +10,13 @@
     --secondary-gradient: linear-gradient(135deg, #6C5CE7 0%, #A29BFE 100%);
     --accent-gradient: linear-gradient(135deg, #00D2FF 0%, #3A7BD5 100%);
     --warm-gradient: linear-gradient(135deg, #FA8BFF 0%, #2BD2FF 90%);
-    
+
     /* Accent Colors */
     --accent-purple: #6C5CE7;
     --accent-teal: #00D2A5;
     --accent-orange: #FF6B6B;
     --accent-pink: #FA8BFF;
-    
+
     /* Background Colors */
     --bg-gradient-light: linear-gradient(135deg, #F5F7FA 0%, #E8EFF7 100%);
     --bg-gradient-primary: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
@@ -37,13 +37,22 @@
     right: -50%;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
     animation: pulse 8s ease-in-out infinite;
 }
 
 @keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 0.3; }
-    50% { transform: scale(1.1); opacity: 0.5; }
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.5;
+    }
 }
 
 .hero-section h1,
@@ -129,8 +138,13 @@
 .card {
     border-left: 4px solid transparent;
     background: linear-gradient(white, white) padding-box,
-                linear-gradient(135deg, #667EEA, #764BA2) border-box;
+        linear-gradient(135deg, #667EEA, #764BA2) border-box;
     border-left-width: 4px;
+}
+
+.card:nth-child(8),
+.card:nth-child(9) {
+    border-left-color: #764BA2;
 }
 
 .card:hover {
@@ -154,8 +168,15 @@ section:nth-child(even) {
 }
 
 @keyframes gradient-shift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 /* CTA Section with Bold Gradient */

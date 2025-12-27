@@ -9,28 +9,28 @@
    =================================== */
 
 :root {
-    --chatbot-primary: #0066CC;
-    --chatbot-primary-dark: #0052A3;
-    --chatbot-primary-light: #3385D6;
+    --chatbot-primary: #FFC107;
+    --chatbot-primary-dark: #FFB300;
+    --chatbot-primary-light: #FFD54F;
     --chatbot-secondary: #004080;
     --chatbot-accent: #00AAFF;
-    
+
     --chatbot-bg: #FFFFFF;
     --chatbot-bg-light: #F5F5F5;
     --chatbot-bg-darker: #E8E8E8;
-    
+
     --chatbot-text-dark: #333333;
     --chatbot-text-medium: #555555;
     --chatbot-text-light: #666666;
-    
+
     --chatbot-user-bubble: #0066CC;
     --chatbot-bot-bubble: #F5F5F5;
     --chatbot-user-text: #FFFFFF;
     --chatbot-bot-text: #333333;
-    
+
     --chatbot-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     --chatbot-shadow-hover: 0 6px 30px rgba(0, 0, 0, 0.2);
-    
+
     --chatbot-transition: all 0.3s ease;
     --chatbot-z-index: 999;
 }
@@ -87,10 +87,12 @@
         transform: scale(1);
         opacity: 1;
     }
+
     50% {
         transform: scale(1.2);
         opacity: 0.5;
     }
+
     100% {
         transform: scale(1.4);
         opacity: 0;
@@ -268,6 +270,7 @@
         opacity: 0;
         transform: translateY(10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -401,9 +404,13 @@
 }
 
 @keyframes chatbot-typing-bounce {
-    0%, 80%, 100% {
+
+    0%,
+    80%,
+    100% {
         transform: translateY(0);
     }
+
     40% {
         transform: translateY(-8px);
     }
@@ -527,12 +534,12 @@
         width: 56px;
         height: 56px;
     }
-    
+
     .chatbot-button svg {
         width: 26px;
         height: 26px;
     }
-    
+
     .chatbot-window {
         bottom: 0;
         right: 0;
@@ -543,11 +550,11 @@
         max-height: 100%;
         border-radius: 0;
     }
-    
+
     .chatbot-header {
         border-radius: 0;
     }
-    
+
     .chatbot-message-bubble {
         max-width: 80%;
     }
@@ -577,6 +584,7 @@
 
 /* Reduced motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
+
     .chatbot-button,
     .chatbot-window,
     .chatbot-message,
@@ -586,11 +594,11 @@
         animation: none;
         transition: none;
     }
-    
+
     .chatbot-button::before {
         animation: none;
     }
-    
+
     .chatbot-typing-dot {
         animation: none;
     }
@@ -598,6 +606,7 @@
 
 /* High contrast mode support */
 @media (prefers-contrast: high) {
+
     .chatbot-button,
     .chatbot-window,
     .chatbot-message-bubble {
@@ -610,6 +619,7 @@
    =================================== */
 
 @media print {
+
     .chatbot-button,
     .chatbot-window {
         display: none !important;
